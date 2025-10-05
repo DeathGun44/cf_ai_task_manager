@@ -1,0 +1,34 @@
+name = "cf-ai-task-manager"
+main = "src/index.js"
+compatibility_date = "2024-12-05"
+compatibility_flags = ["nodejs_compat"]
+
+# AI binding for Workers AI
+[ai]
+binding = "AI"
+
+# Durable Objects for state management
+[[durable_objects.bindings]]
+name = "TASK_AGENT"
+class_name = "TaskAgent"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["TaskAgent"]
+
+# Environment variables (you'll need to set these)
+[vars]
+ENVIRONMENT = "production"
+
+# KV for additional storage if needed
+[[kv_namespaces]]
+binding = "TASK_STORE"
+id = "3933b023539e4b7d8c7de5c854eadf5b"
+
+# Vectorize for semantic search and memory
+[[vectorize]]
+binding = "TASK_MEMORY"
+index_name = "task-memory-index"
+
+# Note: Workflows functionality is available via API endpoints
+# Workflows are triggered through /workflows/* endpoints

@@ -1,0 +1,28 @@
+{
+  "name": "cf_ai_task_manager",
+  "version": "1.0.0",
+  "description": "AI-powered task management system built entirely on Cloudflare's platform with Workers AI, Durable Objects, Vectorize, and Workflows",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "pages:dev": "wrangler pages dev pages",
+    "pages:deploy": "wrangler pages deploy pages",
+    "setup": "wrangler vectorize create task-memory-index --dimensions=1024 --metric=cosine && wrangler kv namespace create TASK_STORE",
+    "build": "echo 'No build step required for Workers'",
+    "test": "echo 'Add your tests here'",
+    "lint": "echo 'Add linting here'"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.78.12",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  },
+  "keywords": ["cloudflare", "ai", "agents", "task-management", "llama"],
+  "author": "Your Name",
+  "license": "MIT"
+}
