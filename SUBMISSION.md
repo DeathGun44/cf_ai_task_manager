@@ -1,4 +1,4 @@
-# Cloudflare AI Challenge 2024 - Submission
+# Cloudflare AI Challenge 2025 - Submission
 
 ## Project Information
 
